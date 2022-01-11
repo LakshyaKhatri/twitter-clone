@@ -1,4 +1,5 @@
 import React from 'react';
+import SidebarOption from './SidebarOption';
 import './Sidebar.css';
 import TwitterIcon from "@material-ui/icons/Twitter"
 
@@ -9,6 +10,10 @@ function Sidebar() {
       <TwitterIcon />
 
       {/* SidebarOption */}
+      <SidebarOption />
+      <SidebarOption />
+      <SidebarOption />
+      <SidebarOption />
       {/* SidebarOption */}
       {/* SidebarOption */}
       {/* SidebarOption */}
