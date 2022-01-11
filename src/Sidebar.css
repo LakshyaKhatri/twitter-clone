@@ -11,6 +11,10 @@
   transition: color 100ms ease-out;
 }
 
+.sidebarOption--active {
+  color: var(--primary);
+}
+
 .sidebarOption > .MuiSvgIcon-root {
   padding: 20px;
 }
