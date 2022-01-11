@@ -1,4 +1,5 @@
 import './App.css';
+import Sidebar from './Sidebar'
 
 function App() {
   return (
@@ -6,9 +7,10 @@ function App() {
       <h1>Hello World</h1>
 
       {/* Sidebar */}
+      <Sidebar />
 
       {/* Feed */}
-      
+
       {/* Widgets */}
     </div>
   );
