@@ -1,8 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
+import './Feed.css'
 
 function Feed() {
   return (
-    <h1> This is Feed </h1>
+    <div className="feed">
+      <div className="feed_header">
+        <h2>Home</h2>
+      </div>
+
+      {/* TweetBox */}
+
+      {/* Post */}
+      {/* Post */}
+      {/* Post */}
+      {/* Post */}
+      {/* Post */}
+      {/* Post */}
+      {/* Post */}
+      {/* Post */}
+    </div>
   );
 }
 export default Feed
