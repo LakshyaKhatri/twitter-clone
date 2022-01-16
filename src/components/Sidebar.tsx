@@ -3,7 +3,7 @@ import { HomeIcon } from "@heroicons/react/solid";
 import {
   HashtagIcon,
   BellIcon,
-  InboxIcon,
+  MailIcon,
   BookmarkIcon,
   ClipboardListIcon,
   UserIcon,
@@ -23,7 +23,7 @@ function Sidebar() {
       <SidebarOption text="Home" Icon={HomeIcon} active />
       <SidebarOption text="Explore" Icon={HashtagIcon} />
       <SidebarOption text="Notifications" Icon={BellIcon} />
-      <SidebarOption text="Messages" Icon={InboxIcon} />
+      <SidebarOption text="Messages" Icon={MailIcon} />
       <SidebarOption text="Bookmarks" Icon={BookmarkIcon} />
       <SidebarOption text="Lists" Icon={ClipboardListIcon} />
       <SidebarOption text="Profile" Icon={UserIcon} />
