@@ -20,15 +20,17 @@ function Sidebar() {
       </div>
 
       <div className="space-y-2.5 mt-4 mb-2.5">
-      <SidebarOption text="Home" Icon={HomeIcon} active />
-      <SidebarOption text="Explore" Icon={HashtagIcon} />
-      <SidebarOption text="Notifications" Icon={BellIcon} />
-      <SidebarOption text="Messages" Icon={MailIcon} />
-      <SidebarOption text="Bookmarks" Icon={BookmarkIcon} />
-      <SidebarOption text="Lists" Icon={ClipboardListIcon} />
-      <SidebarOption text="Profile" Icon={UserIcon} />
-      <SidebarOption text="More" Icon={DotsCircleHorizontalIcon} />
+        <SidebarOption text="Home" Icon={HomeIcon} active />
+        <SidebarOption text="Explore" Icon={HashtagIcon} />
+        <SidebarOption text="Notifications" Icon={BellIcon} />
+        <SidebarOption text="Messages" Icon={MailIcon} />
+        <SidebarOption text="Bookmarks" Icon={BookmarkIcon} />
+        <SidebarOption text="Lists" Icon={ClipboardListIcon} />
+        <SidebarOption text="Profile" Icon={UserIcon} />
+        <SidebarOption text="More" Icon={DotsCircleHorizontalIcon} />
       </div>
+
+      <button className="hidden xl:inline bg-[#1d9bf0] rounded-full w-56 h-[57px] text-white text-lg font-bold shadow-md hover:bg-[#1a8cd8]">Tweet</button>
     </div>
   )
 }
