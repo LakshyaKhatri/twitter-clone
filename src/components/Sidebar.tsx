@@ -14,9 +14,9 @@ import SidebarOption from './SidebarOption'
 
 function Sidebar() {
   return (
-    <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] p-2 fixed h-full  xl:ml-12">
-      <div className="flex items-center justify-center w-14 h-14 hoverAnimation p-0 mt-0">
-        <Image src="https://rb.gy/ogau5a" width={30} height={30} />
+    <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] px-2.5 py-2 fixed h-full xl:ml-12 overflow-auto">
+      <div className="flex items-center justify-center w-14 h-14 hover-animation p-0 mt-0">
+        <Image src="https://rb.gy/ogau5a" width={28} height={28} />
       </div>
 
       <div className="mb-2.5">
@@ -29,8 +29,10 @@ function Sidebar() {
         <SidebarOption text="Profile" Icon={UserIcon} />
         <SidebarOption text="More" Icon={DotsCircleHorizontalIcon} />
       </div>
-      <button className="hidden xl:inline bg-[#1d9bf0] rounded-full w-56 h-[57px] text-white text-lg font-bold shadow-md hover:bg-[#1a8cd8]">Tweet</button>
-      <div className="text-[#d9d9d9] flex items-center justify-center hoverAnimation xl:-mr-5 mt-auto">
+
+      <button className="hidden xl:inline bg-[#1d9bf0] rounded-full w-56 min-h-[54px] text-white text-lg font-bold shadow-md hover:bg-[#1a8cd8] mb-3">Tweet</button>
+
+      <div className="text-[#d9d9d9] flex items-center justify-center hover-animation xl:-mr-5 mt-auto">
         <img src="https://lh3.googleusercontent.com/ogw/ADea4I5OONOW8CDeT20jW2D_l-4ulrCOKJYq_z-ZwuJS=s83-c-mo" alt="" className="h-10 w-10 rounded-full xl:mr-2.5"/>
 
         <div className="hidden xl:inline leading-5">
