@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TweetBoxIcons from './TweetBoxIcons'
 
 function TweetBox() {
   const [input, setInput] = useState();
@@ -23,7 +24,7 @@ function TweetBox() {
 
         {/* Image */}
 
-        {/* TweetBoxIcons */}
+        <TweetBoxIcons />
       </div>
     </div>
   )
