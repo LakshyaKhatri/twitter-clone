@@ -4,10 +4,11 @@ import {
   EmojiHappyIcon,
   PhotographIcon
 } from '@heroicons/react/outline'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 function TweetBoxIcons() {
-  const filePickerRef = useRef(null);
+  const filePickerRef = useRef(null)
+  const [showEmojis, setShowEmojis] = useState(false)
 
   return (
     <div className="flex items-center">
@@ -20,13 +21,15 @@ function TweetBoxIcons() {
         <ChartBarIcon className="text-[#1d9bf0] h-[20.5px]" />
       </div>
 
-      <div className="tweet-box-icon">
+      <div className="tweet-box-icon" onClick={() => setShowEmojis(!showEmojis)}>
         <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" />
       </div>
 
       <div className="tweet-box-icon">
         <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
       </div>
+
+      {/* EmojiTray */}
     </div>
   )
 }
