@@ -2,7 +2,15 @@ import { useState } from 'react';
 import TweetBoxIcons from './TweetBoxIcons'
 
 function TweetBox() {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState('');
+
+  const addEmoji = (e) => {
+    let sym = e.unified.split("-");
+    let codesArray = [];
+    sym.forEach((el) => codesArray.push("0x" + el));
+    let emoji = String.fromCodePoint(...codesArray);
+    setInput(input + emoji);
+  }
 
   return (
     <div className={`border-b border-gray-700 px-4 py-3 flex space-x-5 overflow-y-scroll scrollbar-hide`}>
@@ -24,7 +32,7 @@ function TweetBox() {
 
         {/* Image */}
 
-        <TweetBoxIcons />
+        <TweetBoxIcons onEmojiClick={addEmoji} />
       </div>
     </div>
   )

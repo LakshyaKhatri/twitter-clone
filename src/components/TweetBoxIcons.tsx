@@ -8,7 +8,7 @@ import { useRef, useState } from 'react'
 import 'emoji-mart/css/emoji-mart.css'
 import { Picker } from 'emoji-mart'
 
-function TweetBoxIcons() {
+function TweetBoxIcons({ onEmojiClick }) {
   const filePickerRef = useRef(null)
   const [showEmojis, setShowEmojis] = useState(false)
 
@@ -33,7 +33,7 @@ function TweetBoxIcons() {
 
       {showEmojis && (
         <Picker
-          // onClick={addEmoji}
+          onClick={onEmojiClick}
           style={{
             position: "absolute",
             marginTop: "465px",
