@@ -5,6 +5,8 @@ import {
   PhotographIcon
 } from '@heroicons/react/outline'
 import { useRef, useState } from 'react'
+import 'emoji-mart/css/emoji-mart.css'
+import { Picker } from 'emoji-mart'
 
 function TweetBoxIcons() {
   const filePickerRef = useRef(null)
@@ -29,7 +31,21 @@ function TweetBoxIcons() {
         <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
       </div>
 
-      {/* EmojiTray */}
+      {showEmojis && (
+        <Picker
+          // onClick={addEmoji}
+          style={{
+            position: "absolute",
+            marginTop: "465px",
+            marginLeft: -40,
+            borderRadius: "20px",
+            maxWidth: "320px"
+          }}
+          theme="dark"
+          emojiSize="20px"
+          set="twitter"
+        />
+      )}
     </div>
   )
 }
