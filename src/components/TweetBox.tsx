@@ -34,6 +34,8 @@ function TweetBox() {
 
       <div className="w-full">
         <div>
+          {/* TODO: set a min height and grow when text spans to next line, then set a max-height.
+            You might need a contenteditable instead :( */}
           <textarea
             onChange={(e) => setInput(e.target.value)}
             value={input}
