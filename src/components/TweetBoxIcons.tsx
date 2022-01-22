@@ -8,7 +8,7 @@ import { useRef, useState } from 'react'
 import 'emoji-mart/css/emoji-mart.css'
 import { Picker } from 'emoji-mart'
 
-function TweetBoxIcons({ onEmojiClick }) {
+function TweetBoxIcons({ onImageSelect, onEmojiClick }) {
   const filePickerRef = useRef(null)
   const [showEmojis, setShowEmojis] = useState(false)
 
@@ -16,7 +16,7 @@ function TweetBoxIcons({ onEmojiClick }) {
     <div className="flex items-center">
       <div className="tweet-box-icon" onClick={() => filePickerRef.current.click()}>
         <PhotographIcon className="text-[#1d9bf0] h-[22px]" />
-        <input type="file" hidden ref={filePickerRef}/>
+        <input type="file" hidden ref={filePickerRef} onChange={onImageSelect}/>
       </div>
 
       <div className="tweet-box-icon rotate-90">
