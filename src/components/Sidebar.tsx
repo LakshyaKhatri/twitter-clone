@@ -11,7 +11,7 @@ import {
   DotsHorizontalIcon,
 } from "@heroicons/react/outline"
 import twitterIcon from '/public/twitterIcon.webp'
-import SidebarOption from './SidebarOption'
+import SidebarOption from '@/components/SidebarOption'
 
 function Sidebar() {
   return (

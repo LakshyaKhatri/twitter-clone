@@ -1,5 +1,5 @@
-import FeedHeader from './FeedHeader'
-import TweetBox from './TweetBox'
+import FeedHeader from '@/components/FeedHeader'
+import TweetBox from '@/components/TweetBox'
 
 function Feed() {
   return (

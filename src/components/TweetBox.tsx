@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import TweetBoxIcons from './TweetBoxIcons'
+import TweetBoxIcons from '@/components/TweetBoxIcons'
 import { XIcon } from '@heroicons/react/outline'
 
 function TweetBox() {
