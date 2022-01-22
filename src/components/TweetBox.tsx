@@ -26,7 +26,7 @@ function TweetBox() {
   }
 
   return (
-    <div className={`border-b border-gray-700 px-4 py-3 flex space-x-5 overflow-y-scroll scrollbar-hide`}>
+    <div className={`border-b border-gray-700 px-4 py-3 flex space-x-3 overflow-y-scroll scrollbar-hide`}>
 
       <img src="https://pbs.twimg.com/profile_images/1308745418856042497/rcf4_gRQ_normal.jpg"
            alt=""

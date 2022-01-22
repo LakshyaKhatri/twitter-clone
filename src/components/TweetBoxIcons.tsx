@@ -42,7 +42,7 @@ function TweetBoxIcons({ onImageSelect, onEmojiClick }) {
             maxWidth: "320px"
           }}
           theme="dark"
-          emojiSize="20px"
+          emojiSize={20}
           set="twitter"
         />
       )}

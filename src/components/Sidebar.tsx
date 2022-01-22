@@ -15,7 +15,7 @@ import SidebarOption from './SidebarOption'
 
 function Sidebar() {
   return (
-    <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[340px] px-2.5 py-2 fixed h-full xl:ml-12 overflow-auto">
+    <div className="hidden sm:flex flex-col items-center xl:items-start xl:w-[285px] px-2.5 py-2 fixed h-full xl:ml-12 overflow-auto">
       <div className="flex items-center justify-center w-14 h-14 hover-animation p-0 mt-0">
         <Image src={twitterIcon} width={28} height={28} />
       </div>
