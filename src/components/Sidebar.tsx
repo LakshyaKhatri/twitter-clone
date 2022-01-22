@@ -10,7 +10,7 @@ import {
   DotsCircleHorizontalIcon,
   DotsHorizontalIcon,
 } from "@heroicons/react/outline"
-import twitterIcon from '../public/twitterIcon.webp'
+import twitterIcon from '/public/twitterIcon.webp'
 import SidebarOption from './SidebarOption'
 
 function Sidebar() {
