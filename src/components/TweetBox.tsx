@@ -56,7 +56,7 @@ function TweetBox() {
             <img
               src={selectedFile}
               alt=""
-              className="rounded-2xl max-h-80 object-contain"
+              className="rounded-2xl max-h-80 w-full object-cover"
             />
           </div>
         )}
