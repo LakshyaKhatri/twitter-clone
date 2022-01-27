@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { HomeIcon } from "@heroicons/react/solid";
+import { HomeIcon } from "@heroicons/react/solid"
 import {
   HashtagIcon,
   BellIcon,
