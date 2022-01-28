@@ -1,20 +1,22 @@
 import { useState } from 'react'
-import TweetBoxIcons from '@/components/TweetBoxIcons'
 import { XIcon } from '@heroicons/react/outline'
+import TweetBoxIcons from '@/components/TweetBoxIcons'
+import uploadTweet from '@/lib/firebase/uploadTweet'
 
 function TweetBox() {
   const [input, setInput] = useState('')
   const [selectedFile, setSelectedFile] = useState(null)
+  const [loading, setLoading] = useState(false);
 
   const addImageToPost = (e) => {
-    const reader = new FileReader();
+    const reader = new FileReader()
     if (e.target.files[0]) {
-      reader.readAsDataURL(e.target.files[0]);
+      reader.readAsDataURL(e.target.files[0])
     }
 
     reader.onload = (readerEvent) => {
-      setSelectedFile(readerEvent.target.result);
-    };
+      setSelectedFile(readerEvent.target.result)
+    }
   }
 
   const addEmoji = (e) => {
@@ -25,8 +27,18 @@ function TweetBox() {
     setInput(input + emoji)
   }
 
+  const sendPost = (e) => {
+    if (loading) return
+    setLoading(true)
+    uploadTweet(input, selectedFile).then(() => {
+      setLoading(false)
+      setInput("")
+      setSelectedFile(null)
+    })
+  }
+
   return (
-    <div className={`border-b border-gray-700 px-4 py-3 flex space-x-3 overflow-y-scroll scrollbar-hide`}>
+    <div className={`border-b border-gray-700 px-4 py-3 flex space-x-3 overflow-y-scroll scrollbar-hide ${loading && 'opacity-60'}`}>
 
       <img src="https://pbs.twimg.com/profile_images/1308745418856042497/rcf4_gRQ_normal.jpg"
            alt=""
@@ -61,13 +73,14 @@ function TweetBox() {
           </div>
         )}
 
-        <div className="flex items-center justify-between pt-2.5 border-t border-gray-700">
-          <TweetBoxIcons onImageSelect={addImageToPost} onEmojiClick={addEmoji} />
-          <button
-            className="bg-[#1d9bf0] text-white rounded-full px-4 py-1.5 font-bold shadow-md hover:bg-[#1a8cd8] disabled:hover:bg-[#1d9bf0] disabled:opacity-50 disabled:cursor-default"
-            disabled={!input.trim()}
-          >Tweet</button>
-        </div>
+        {!loading && (<div className="flex items-center justify-between pt-2.5 border-t border-gray-700">
+            <TweetBoxIcons onImageSelect={addImageToPost} onEmojiClick={addEmoji} />
+            <button
+              className="bg-[#1d9bf0] text-white rounded-full px-4 py-1.5 font-bold shadow-md hover:bg-[#1a8cd8] disabled:hover:bg-[#1d9bf0] disabled:opacity-50 disabled:cursor-default"
+              disabled={!input.trim()}
+              onClick={sendPost}
+            >Tweet</button>
+          </div>)}
       </div>
     </div>
   )
