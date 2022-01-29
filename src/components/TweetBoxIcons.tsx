@@ -12,20 +12,20 @@ function TweetBoxIcons({ onImageSelect, onEmojiClick }) {
 
   return (
     <div className="flex items-center">
-      <div className="tweet-box-icon" onClick={() => filePickerRef.current.click()}>
+      <div className="icon-hover-bg" onClick={() => filePickerRef.current.click()}>
         <HiOutlinePhotograph className="text-[#1d9bf0] h-[22px] w-[22px]" />
         <input type="file" hidden ref={filePickerRef} onChange={onImageSelect}/>
       </div>
 
-      <div className="tweet-box-icon">
+      <div className="icon-hover-bg">
         <BiPoll className="text-[#1d9bf0] h-[23px] w-[23px]" />
       </div>
 
-      <div className="tweet-box-icon" onClick={() => setShowEmojis(!showEmojis)}>
+      <div className="icon-hover-bg" onClick={() => setShowEmojis(!showEmojis)}>
         <GrEmoji className="text-[#1d9bf0] h-5 w-5" />
       </div>
 
-      <div className="tweet-box-icon">
+      <div className="icon-hover-bg">
         <BsCalendarEvent className="text-[#1d9bf0] h-4 w-4" />
       </div>
 

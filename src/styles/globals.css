@@ -15,7 +15,7 @@
     xl:pr-4 transition duration-200 ease-out;
   }
 
-  .tweet-box-icon {
+  .icon-hover-bg {
     @apply cursor-pointer w-9 h-9 hover:bg-[#1d9bf0] hover:bg-opacity-10 flex
     items-center justify-center rounded-full transition ease-out;
   }
