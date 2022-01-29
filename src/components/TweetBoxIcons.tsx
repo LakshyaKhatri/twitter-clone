@@ -1,9 +1,7 @@
-import {
-  CalendarIcon,
-  ChartBarIcon,
-  EmojiHappyIcon,
-  PhotographIcon
-} from '@heroicons/react/outline'
+import { BsCalendarEvent } from 'react-icons/bs'
+import { GrEmoji } from 'react-icons/gr'
+import { BiPoll } from 'react-icons/bi'
+import { HiOutlinePhotograph } from 'react-icons/hi'
 import { useRef, useState } from 'react'
 import 'emoji-mart/css/emoji-mart.css'
 import { Picker } from 'emoji-mart'
@@ -15,20 +13,20 @@ function TweetBoxIcons({ onImageSelect, onEmojiClick }) {
   return (
     <div className="flex items-center">
       <div className="tweet-box-icon" onClick={() => filePickerRef.current.click()}>
-        <PhotographIcon className="text-[#1d9bf0] h-[22px]" />
+        <HiOutlinePhotograph className="text-[#1d9bf0] h-[22px] w-[22px]" />
         <input type="file" hidden ref={filePickerRef} onChange={onImageSelect}/>
       </div>
 
-      <div className="tweet-box-icon rotate-90">
-        <ChartBarIcon className="text-[#1d9bf0] h-[20.5px]" />
+      <div className="tweet-box-icon">
+        <BiPoll className="text-[#1d9bf0] h-[23px] w-[23px]" />
       </div>
 
       <div className="tweet-box-icon" onClick={() => setShowEmojis(!showEmojis)}>
-        <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" />
+        <GrEmoji className="text-[#1d9bf0] h-5 w-5" />
       </div>
 
       <div className="tweet-box-icon">
-        <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
+        <BsCalendarEvent className="text-[#1d9bf0] h-4 w-4" />
       </div>
 
       {showEmojis && (

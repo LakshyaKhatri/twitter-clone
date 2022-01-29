@@ -1,15 +1,12 @@
 import Image from 'next/image'
-import { HomeIcon } from "@heroicons/react/solid"
+import { RiHome7Fill, RiHashtag } from 'react-icons/ri'
+import { FiBell, FiBookmark } from 'react-icons/fi'
 import {
-  HashtagIcon,
-  BellIcon,
-  MailIcon,
-  BookmarkIcon,
-  ClipboardListIcon,
-  UserIcon,
-  DotsCircleHorizontalIcon,
-  DotsHorizontalIcon,
-} from "@heroicons/react/outline"
+  HiDotsHorizontal,
+  HiOutlineUser,
+  HiOutlineMail,
+} from 'react-icons/hi'
+import { CgNotes } from 'react-icons/cg'
 import twitterIcon from '/public/twitterIcon.webp'
 import SidebarOption from '@/components/SidebarOption'
 import { useSession, signOut } from 'next-auth/react'
@@ -24,14 +21,14 @@ function Sidebar() {
       </div>
 
       <div className="mb-2.5">
-        <SidebarOption text="Home" Icon={HomeIcon} active />
-        <SidebarOption text="Explore" Icon={HashtagIcon} />
-        <SidebarOption text="Notifications" Icon={BellIcon} />
-        <SidebarOption text="Messages" Icon={MailIcon} />
-        <SidebarOption text="Bookmarks" Icon={BookmarkIcon} />
-        <SidebarOption text="Lists" Icon={ClipboardListIcon} />
-        <SidebarOption text="Profile" Icon={UserIcon} />
-        <SidebarOption text="More" Icon={DotsCircleHorizontalIcon} />
+        <SidebarOption text="Home" Icon={RiHome7Fill} active />
+        <SidebarOption text="Explore" Icon={RiHashtag} />
+        <SidebarOption text="Notifications" Icon={FiBell} />
+        <SidebarOption text="Messages" Icon={HiOutlineMail} />
+        <SidebarOption text="Bookmarks" Icon={FiBookmark} />
+        <SidebarOption text="Lists" Icon={CgNotes} />
+        <SidebarOption text="Profile" Icon={HiOutlineUser} />
+        <SidebarOption text="More" Icon={HiDotsHorizontal} />
       </div>
 
       <button className="hidden xl:inline bg-[#1d9bf0] rounded-full w-56 min-h-[54px] text-white text-lg font-bold shadow-md hover:bg-[#1a8cd8] mb-3">Tweet</button>
@@ -44,7 +41,7 @@ function Sidebar() {
           <h4 className="font-bold">{session.user.name}</h4>
           <p className="text-[#6e767d]">@{session.user.username}</p>
         </div>
-        <DotsHorizontalIcon className="h-5 hidden xl:inline ml-10" />
+        <HiDotsHorizontal className="w-5 h-5 hidden xl:inline ml-10" />
       </div>
     </div>
   )

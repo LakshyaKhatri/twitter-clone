@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { XIcon } from '@heroicons/react/outline'
+import { HiOutlineX } from 'react-icons/hi'
 import TweetBoxIcons from '@/components/TweetBoxIcons'
 import uploadTweet from '@/lib/firebase/uploadTweet'
 import { useSession } from 'next-auth/react'
@@ -65,7 +65,7 @@ function TweetBox() {
               className="absolute w-8 h-8 bg-[#15181c] hover:bg-[#272c26] bg-opacity-75 rounded-full flex items-center justify-center top-1 left-1 cursor-pointer"
               onClick={() => setSelectedFile(null)}
             >
-              <XIcon className="text-white h-5" />
+              <HiOutlineX className="text-white h-5 w-5" />
             </div>
             <img
               src={selectedFile}
