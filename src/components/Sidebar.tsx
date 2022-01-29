@@ -12,7 +12,7 @@ import {
 } from "@heroicons/react/outline"
 import twitterIcon from '/public/twitterIcon.webp'
 import SidebarOption from '@/components/SidebarOption'
-import { useSession } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
 
 function Sidebar() {
   const { data: session } = useSession()
@@ -36,7 +36,8 @@ function Sidebar() {
 
       <button className="hidden xl:inline bg-[#1d9bf0] rounded-full w-56 min-h-[54px] text-white text-lg font-bold shadow-md hover:bg-[#1a8cd8] mb-3">Tweet</button>
 
-      <div className="text-[#d9d9d9] flex items-center justify-center hover-animation xl:-mr-5 mt-auto">
+      <div className="text-[#d9d9d9] flex items-center justify-center hover-animation xl:-mr-5 mt-auto"
+           onClick={signOut}>
         <img src={session.user.image} alt="" className="h-10 w-10 rounded-full xl:mr-2.5"/>
 
         <div className="hidden xl:inline leading-5">
