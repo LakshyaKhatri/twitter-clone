@@ -11,7 +11,7 @@ export default function Home({ providers }) {
   return (
     <div>
       <Head className="">
-        <title>Twitter</title>
+        <title>Twitter Clone</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
 

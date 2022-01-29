@@ -11,7 +11,7 @@ export default NextAuth({
   ],
   callbacks: {
     async session({ session, token }) {
-      session.user.tag = session.user.email
+      session.user.username = session.user.email
         .split("@")[0]
         .toLocaleLowerCase()
 

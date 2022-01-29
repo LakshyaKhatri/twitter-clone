@@ -2,11 +2,13 @@ import { useState } from 'react'
 import { XIcon } from '@heroicons/react/outline'
 import TweetBoxIcons from '@/components/TweetBoxIcons'
 import uploadTweet from '@/lib/firebase/uploadTweet'
+import { useSession } from 'next-auth/react'
 
 function TweetBox() {
   const [input, setInput] = useState('')
   const [selectedFile, setSelectedFile] = useState(null)
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const { data: session } = useSession()
 
   const addImageToPost = (e) => {
     const reader = new FileReader()
@@ -40,7 +42,7 @@ function TweetBox() {
   return (
     <div className={`border-b border-gray-700 px-4 py-3 flex space-x-3 overflow-y-scroll scrollbar-hide ${loading && 'opacity-60'}`}>
 
-      <img src="https://pbs.twimg.com/profile_images/1308745418856042497/rcf4_gRQ_normal.jpg"
+      <img src={session.user.image}
            alt=""
            className="h-12 w-12 rounded-full cursor-pointer"/>
 
