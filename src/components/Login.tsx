@@ -28,4 +28,4 @@ function Login({ providers }) {
   );
 }
 
-export default Login;
+export default Login
