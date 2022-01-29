@@ -8,11 +8,9 @@ import { db, storage } from "@/firebase"
 async function uploadTweet(text, imageDataUrl) {
   return new Promise(async (resolve) => {
     const docRef = await addDoc(collection(db, "posts"), {
-      // username: session.user.name,
-      // userImg: session.user.image,
-      // tag: session.user.tag,
+      user_id: session.user.uid,
       text: text,
-      timestamp: serverTimestamp(),
+      created_at: serverTimestamp(),
     })
 
     if (imageDataUrl) {
