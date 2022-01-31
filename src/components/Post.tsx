@@ -11,7 +11,7 @@ function Post() {
   const { data: session } = useSession()
 
   return (
-    <div className="pt-3 pl-4 pr-3 flex space-x-3 cursor-pointer border-b border-gray-700">
+    <div className="pt-3 pr-3 pb-1 pl-4 flex space-x-3 cursor-pointer border-b border-gray-700">
       <img src={session.user.image}
            alt="profile picture"
            className="h-12 w-12 rounded-full cursor-pointer"/>
