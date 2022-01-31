@@ -1,5 +1,6 @@
 import FeedHeader from '@/components/FeedHeader'
 import TweetBox from '@/components/TweetBox'
+import Post from '@/components/Post'
 
 function Feed() {
   return (
@@ -8,6 +9,8 @@ function Feed() {
       <FeedHeader />
 
       <TweetBox />
+
+      <Post />
     </div>
   )
 }
