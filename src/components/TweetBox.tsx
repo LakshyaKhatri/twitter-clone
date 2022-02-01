@@ -32,7 +32,7 @@ function TweetBox() {
   const sendPost = (e) => {
     if (loading) return
     setLoading(true)
-    uploadTweet(input, selectedFile).then(() => {
+    uploadTweet(input, selectedFile, session).then(() => {
       setLoading(false)
       setInput("")
       setSelectedFile(null)

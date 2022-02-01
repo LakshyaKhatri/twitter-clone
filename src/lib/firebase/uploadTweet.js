@@ -5,7 +5,7 @@ import {
 import { getDownloadURL, ref, uploadString } from "@firebase/storage"
 import { db, storage } from "@/firebase"
 
-async function uploadTweet(text, imageDataUrl) {
+async function uploadTweet(text, imageDataUrl, session) {
   return new Promise(async (resolve) => {
     const docRef = await addDoc(collection(db, "posts"), {
       user_id: session.user.uid,
