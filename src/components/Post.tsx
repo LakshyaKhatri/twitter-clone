@@ -7,7 +7,7 @@ import { IoIosHeartEmpty } from 'react-icons/io'
 import { FiShare } from 'react-icons/fi'
 
 
-function Post() {
+function Post({ postData }) {
   const { data: session } = useSession()
 
   return (
@@ -29,12 +29,14 @@ function Post() {
           </div>
         </div>
 
-        <p className="text-[#d9d9d9] text-[15px] mt-0.5">
-           “Remember your history, folks”
-           <br/>
-           <br/>
-           <p>“Make sure you have all the tools. If a carpenter shows up to your house with just a hammer, you probably want to call someone else.”</p>
-        </p>
+        <p className="text-[#d9d9d9] text-[15px] mt-0.5">{postData.text}</p>
+        {postData.image_url && (
+          <img
+            src={postData.image_url}
+            alt=""
+            className="rounded-2xl max-h-80 w-[98%] object-cover"
+          />
+        )}
 
         <div className="text-[#6e767d] flex justify-between max-w-[26rem]">
           <div className="flex items-center justify-center group">
