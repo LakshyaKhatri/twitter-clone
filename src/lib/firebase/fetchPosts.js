@@ -13,7 +13,7 @@ async function fetchPosts({pageSize, lastRecord=null}) {
                                limit(pageSize))
 
   const nextSnapshot = await getDocs(paginatedQuery)
-  return nextSnapshot.docs.map(x => x.data())
+  return nextSnapshot.docs
 }
 
 export default fetchPosts
