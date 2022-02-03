@@ -28,9 +28,13 @@ function Feed() {
         dataLength={posts.length}
         next={morePostsPlease}
         hasMore={hasMorePosts}
-        loader={<h4 className="text-white">Loading...</h4>}
+        loader={(
+          <div className="flex align-middle justify-center my-3">
+            <div className="w-8 h-8 border-[#1d9bf0] border-opacity-10 border-4 border-t-[#1d9bf0]/100 rounded-full animate-spin">
+            </div>
+          </div>)}
         endMessage={
-          <p className="py-2 text-center text-[#d9d9d9] bg-[#090909]">
+          <p className="py-3 text-center text-[#1d9bf0] text-sm">
             Damn it! I should have added more posts 🤦
           </p>
         }
