@@ -20,7 +20,7 @@ async function uploadTweet(text, imageDataUrl, session) {
 
       uploadString(imageRef, imageDataUrl, "data_url").then(async () => {
         const downloadURL = await getDownloadURL(imageRef)
-        updateDoc(doc(db, "posts", docRef.id), { image: downloadURL }).then(resolve)
+        updateDoc(doc(db, "posts", docRef.id), { image_url: downloadURL }).then(resolve)
       })
     }
     resolve()
