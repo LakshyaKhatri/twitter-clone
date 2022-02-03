@@ -1,5 +1,5 @@
-import { signIn } from 'next-auth/react';
-import Image from 'next/image';
+import { signIn } from 'next-auth/react'
+import Image from 'next/image'
 import twitter512 from '/public/twitter512.png'
 
 function Login({ providers }) {
