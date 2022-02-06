@@ -5,6 +5,7 @@ import { BsChat } from 'react-icons/bs'
 import { AiOutlineRetweet } from 'react-icons/ai'
 import { IoIosHeartEmpty } from 'react-icons/io'
 import { FiShare } from 'react-icons/fi'
+import Image from 'next/image'
 
 
 function Post({ postData }) {
@@ -16,8 +17,8 @@ function Post({ postData }) {
            alt="profile picture"
            className="h-12 w-12 rounded-full cursor-pointer"/>
 
-      <div className="space-y-2 w-full">
-        <div className="text-[#6e767d] flex h-[22px]">
+      <div className="w-full">
+        <div className="text-[#6e767d] flex h-[22px] mb-2">
           <div className="inline-block group">
             <h4 className="font-semibold text-[15px] text-[#d9d9d9] group-hover:underline inline-block">
               {session.user.name}
@@ -29,11 +30,14 @@ function Post({ postData }) {
           </div>
         </div>
 
-        <p className="text-[#d9d9d9] text-[15px] mt-0.5">{postData.text}</p>
+        <p className="text-[#d9d9d9] text-[15px] mb-2">{postData.text}</p>
+
         {postData.image_url && (
-          <img
+          <Image
             src={postData.image_url}
             alt=""
+            width={502}
+            height={313}
             className="rounded-2xl max-h-80 w-[98%] object-cover"
           />
         )}
