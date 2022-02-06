@@ -37,7 +37,8 @@ function TweetBoxIcons({ onImageSelect, onEmojiClick }) {
             marginTop: "465px",
             marginLeft: -40,
             borderRadius: "20px",
-            maxWidth: "320px"
+            maxWidth: "320px",
+            zIndex: 100,
           }}
           theme="dark"
           emojiSize={20}
