@@ -8,8 +8,8 @@ import { db } from "@/firebase"
 
 async function fetchPosts({pageSize, lastRecord=null}) {
   const paginatedQuery = query(collection(db, "posts"),
-                               orderBy('created_at'),
-                               startAfter(lastRecord),
+                               orderBy('created_at', 'desc'),
+                               startAfter((lastRecord && lastRecord.created_at) || []),
                                limit(pageSize))
 
   const nextSnapshot = await getDocs(paginatedQuery)
