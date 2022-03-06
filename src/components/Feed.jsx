@@ -10,7 +10,7 @@ function Feed() {
   const [hasMorePosts, setHasMorePosts] = useState(true)
 
   const morePostsPlease = async () => {
-    const newPosts = await fetchPosts({ pageSize: 10, lastRecord: posts.at(-1) && posts.at(-1).data() })
+    const newPosts = await fetchPosts({ pageSize: 2, lastRecord: posts.at(-1) && posts.at(-1).data() })
     setHasMorePosts(!(newPosts.length === 0))
     hasMorePosts && setPosts(posts.concat(newPosts))
   }

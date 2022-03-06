@@ -6,7 +6,7 @@ import {
 import { db } from "@/firebase"
 
 
-async function fetchPosts({pageSize, lastRecord=null}) {
+async function fetchPosts({pageSize, lastRecord}) {
   const paginatedQuery = query(collection(db, "posts"),
                                orderBy('created_at', 'desc'),
                                startAfter((lastRecord && lastRecord.created_at) || []),
