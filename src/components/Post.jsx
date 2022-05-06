@@ -1,15 +1,24 @@
 {/* TODO: change to respective user's data */}
 import { useSession } from 'next-auth/react'
+import { useState } from 'react'
 import { HiDotsHorizontal } from 'react-icons/hi'
 import { BsChat } from 'react-icons/bs'
 import { AiOutlineRetweet } from 'react-icons/ai'
-import { IoIosHeartEmpty } from 'react-icons/io'
+import { IoIosHeartEmpty, IoIosHeart } from 'react-icons/io'
 import { FiShare } from 'react-icons/fi'
 import Image from 'next/image'
 
 
 function Post({ postData }) {
   const { data: session } = useSession()
+  const [liked, setLiked] = useState(false)
+  const [likeCount, setLikeCount] = useState(0)
+
+  const likeUnlikePost = (e) => {
+    e.stopPropagation()
+    setLikeCount(liked ? likeCount - 1 : likeCount + 1)
+    setLiked(!liked)
+  }
 
   return (
     <div className="hover:bg-[#080808] pt-3 pr-3 pb-1 pl-4 flex space-x-3 cursor-pointer border-b border-gray-700">
@@ -54,9 +63,17 @@ function Post({ postData }) {
             </div>
           </div>
           <div className="flex items-center justify-center group">
-            <div className="icon-hover-bg group-hover:bg-pink-600/10">
-              <IoIosHeartEmpty className="w-5 h-5 group-hover:text-pink-600"/>
+            <div className="icon-hover-bg group-hover:bg-pink-600/10" onClick={likeUnlikePost}>
+              {
+                liked ?
+                <IoIosHeart className="w-5 h-5 text-[#f91880]"/> :
+                <IoIosHeartEmpty className="w-5 h-5 group-hover:text-[#f91880]"/>
+              }
             </div>
+            {
+              (likeCount > 0) &&
+              <div className={`group-hover:text-pink-600 text-[13px] mt-[1px] select-none ${liked && "text-[#f91880]"}`}>{likeCount}</div>
+            }
           </div>
           <div className="flex items-center justify-center group">
             <div className="icon-hover-bg group-hover:bg-[#1d9bf0] group-hover:bg-opacity-10">
