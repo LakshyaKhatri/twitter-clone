@@ -14,7 +14,7 @@ function Post({ postData }) {
   const [liked, setLiked] = useState(false)
   const [likeCount, setLikeCount] = useState(0)
 
-  const likeUnlikePost = (e) => {
+  const likeUnlikeTweet = (e) => {
     e.stopPropagation()
     setLikeCount(liked ? likeCount - 1 : likeCount + 1)
     setLiked(!liked)
@@ -63,7 +63,7 @@ function Post({ postData }) {
             </div>
           </div>
           <div className="flex items-center justify-center group">
-            <div className="icon-hover-bg group-hover:bg-pink-600/10" onClick={likeUnlikePost}>
+            <div className="icon-hover-bg group-hover:bg-pink-600/10" onClick={likeUnlikeTweet}>
               {
                 liked ?
                 <IoIosHeart className="w-5 h-5 text-[#f91880]"/> :
