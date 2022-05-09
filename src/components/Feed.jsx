@@ -39,7 +39,7 @@ function Feed() {
           </p>
         }
       >{posts.map((post) => (
-        <Post postData={post.data()} key={post.id} />
+        <Post postData={post.data()} postId={post.id} key={post.id} />
       ))}</InfiniteScroll>
     </div>
   )

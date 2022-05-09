@@ -9,7 +9,7 @@ import { FiShare } from 'react-icons/fi'
 import Image from 'next/image'
 
 
-function Post({ postData }) {
+function Post({ id, postData }) {
   const { data: session } = useSession()
   const [liked, setLiked] = useState(false)
   const [likeCount, setLikeCount] = useState(0)
