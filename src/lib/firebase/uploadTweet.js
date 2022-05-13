@@ -14,9 +14,8 @@ async function uploadTweet(text, imageDataUrl, session) {
     })
 
     if (imageDataUrl) {
-      const filename = Date.now()
       const fileExt = imageDataUrl.split(';')[0].split(':')[1].split('/')[1]
-      const imageRef = ref(storage, `posts/${filename}.${fileExt}`)
+      const imageRef = ref(storage, `posts/${docRef.id}.${fileExt}`)
 
       uploadString(imageRef, imageDataUrl, "data_url").then(async () => {
         const downloadURL = await getDownloadURL(imageRef)
