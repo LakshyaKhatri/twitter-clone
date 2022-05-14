@@ -1,24 +1,39 @@
 {/* TODO: change to respective user's data */}
 import { useSession } from 'next-auth/react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { HiDotsHorizontal } from 'react-icons/hi'
 import { BsChat } from 'react-icons/bs'
 import { AiOutlineRetweet } from 'react-icons/ai'
 import { IoIosHeartEmpty, IoIosHeart } from 'react-icons/io'
 import { FiShare } from 'react-icons/fi'
 import Image from 'next/image'
+import { db } from "@/firebase"
+import { doc, onSnapshot } from "firebase/firestore"
+import { updateLikesFor, isLikedByUser } from '@/lib/firebase/likes'
 
 
 function Post({ postId, postData }) {
   const { data: session } = useSession()
-  const [liked, setLiked] = useState(false)
+  const [isLiked, setIsLiked] = useState(false)
   const [likeCount, setLikeCount] = useState(0)
 
   const likeUnlikeTweet = (e) => {
     e.stopPropagation()
-    setLikeCount(liked ? likeCount - 1 : likeCount + 1)
-    setLiked(!liked)
+    setIsLiked(!isLiked)
+    updateLikesFor(postId, session.user.uid)
   }
+
+  useEffect(() => {
+    onSnapshot(doc(db, 'likes', postId), (snapshot) => {
+      setLikeCount(snapshot.exists() ? snapshot.data().count : 0)
+    })
+  }, [db, postId])
+
+  useEffect(() => {
+    isLikedByUser(postId, session.user.uid).then((result) => {
+      setIsLiked(result)
+    })
+  }, [])
 
   return (
     <article className="hover:bg-[#080808] pt-3 pr-3 pb-1 pl-4 flex space-x-3 cursor-pointer border-b border-gray-700">
@@ -65,14 +80,14 @@ function Post({ postId, postData }) {
           <div className="flex items-center justify-center group">
             <div className="icon-hover-bg group-hover:bg-pink-600/10" onClick={likeUnlikeTweet}>
               {
-                liked ?
+                isLiked ?
                 <IoIosHeart className="w-5 h-5 text-[#f91880]"/> :
                 <IoIosHeartEmpty className="w-5 h-5 group-hover:text-[#f91880]"/>
               }
             </div>
             {
               (likeCount > 0) &&
-              <div className={`group-hover:text-pink-600 text-[13px] mt-[1px] select-none ${liked && "text-[#f91880]"}`}>{likeCount}</div>
+              <div className={`group-hover:text-pink-600 text-[13px] mt-[1px] select-none ${isLiked && "text-[#f91880]"}`}>{likeCount}</div>
             }
           </div>
           <div className="flex items-center justify-center group">
