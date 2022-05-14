@@ -49,8 +49,8 @@ function Post({ postId, postData }) {
             </h4>
             <span className="text-[15px] ml-1.5">@{session.user.username}</span>
           </div>
-          <div className="icon group flex-shrink-0 ml-auto flex justify-center align-bottom">
-            <HiDotsHorizontal className="icon-hover-bg w-5 text-[#6e767d] group-hover:text-[#1d9bf0]" />
+          <div className="icon-hover-bg group ml-auto flex">
+            <HiDotsHorizontal className="w-[1.15rem] h-[1.15rem] text-[#6e767d] group-hover:text-[#1d9bf0]" />
           </div>
         </div>
 
