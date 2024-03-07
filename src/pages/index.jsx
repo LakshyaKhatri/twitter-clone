@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Sidebar from '@/components/Sidebar'
 import Feed from '@/components/Feed'
+import Widgets from '@/components/Widgets'
 import Login from '@/components/Login'
 import { getSession, getProviders, useSession } from 'next-auth/react'
 
@@ -18,7 +19,7 @@ export default function Home({ providers }) {
       <main className="min-h-screen flex max-w-[1500px] mx-auto">
         <Sidebar />
         <Feed />
-        {/* Widgets */}
+        <Widgets />
 
         {/* Modal */}
       </main>
